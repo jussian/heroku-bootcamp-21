@@ -14,5 +14,10 @@ def index():
     results = db.execute('SELECT name FROM city')      
     return render_template('cities.html', cities=results)
 
+@app.route('/names')
+def names():
+    results = db.execute('SELECT name FROM names')
+    return render_templat('names.html', names=results)
+
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
